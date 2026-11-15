@@ -136,7 +136,7 @@ Each agent has a Connections panel listing the four steps with done, missing or 
 
 ### Minimal JSON edits (K3)
 
-When Atrium changes `.mcp.json` or `.claude/settings.local.json`, it keeps the file's existing key order, indentation and line endings and changes only the values it needs (`serde_json` with `preserve_order`, plus re-indentation matching the file). New files are written as ClaudeDesk writes them (pretty, sorted keys).
+When Atrium changes `.mcp.json` or `.claude/settings.local.json`, it keeps the file's existing key order, indentation and line endings and changes only the values it needs (`serde_json` with `preserve_order`, plus re-indentation matching the file). New files, and files still in ClaudeDesk's own form (Foundation pretty and sorted, or the initial `{}` and `.mcp.json` literals), are written as ClaudeDesk writes them, so output stays byte-identical to ClaudeDesk.
 
 ### Backups (K4)
 

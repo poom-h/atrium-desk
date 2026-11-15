@@ -115,7 +115,7 @@ These are **not** in the workspace, so a second app on the same machine (or the 
 | `path` | string | Absolute path of the agent folder |
 | `createdAt` | number | Seconds since 2001-01-01 UTC |
 
-`agent.json` inside the agent folder is written once at creation with a plain `JSONEncoder` (compact, key order not guaranteed). The registry `agents.json` holds the same objects as pretty JSON. Derived values: the **configuration directory** is `<path>/.runtime`; the **agent folder name** is the last path component of `path`.
+`agent.json` inside the agent folder is written once at creation with a plain `JSONEncoder` (compact, properties in declaration order, slashes escaped as `\/`). The registry `agents.json` holds the same objects as pretty JSON. Derived values: the **configuration directory** is `<path>/.runtime`; the **agent folder name** is the last path component of `path`.
 
 ### 3.2 Creating an agent
 
@@ -187,7 +187,7 @@ No memories recorded yet.
 }
 ```
 
-`.runtime/settings.json` (pretty JSON, path is the agent's final folder, not the staging folder):
+`.runtime/settings.json` (pretty JSON **with slashes escaped** as `\/`, since this write omits `.withoutEscapingSlashes`; the path is the agent's final folder, not the staging folder):
 
 ```json
 {

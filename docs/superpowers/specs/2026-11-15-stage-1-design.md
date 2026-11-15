@@ -1,6 +1,6 @@
 # Atrium stage 1: projects, agents and terminals
 
-Status: draft for review, 2026-11-15.
+Status: approved, 2026-11-15.
 
 ## Goal
 
